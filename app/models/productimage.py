@@ -2,6 +2,7 @@ from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import relationship
 
 from .base_class import Base  
+from .product import Product
 
 
 class ProductImage(Base):
@@ -13,7 +14,7 @@ class ProductImage(Base):
     productimage_type = Column('ProductImageType', String(25))
     productimage_name = Column('ProductImageName', String(25))
     
-    # product_id = Column('ProductId', Integer, ForeignKey("Product.ProductId", ondelete="CASCADE"), nullable=False)
+    product_id = Column('ProductId', Integer, ForeignKey(Product.product_id, ondelete="CASCADE"), nullable=False)
     # products = relationship("Product", back_populates="product_images")
     
     

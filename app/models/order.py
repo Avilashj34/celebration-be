@@ -3,6 +3,7 @@ from sqlalchemy.ext.mutable import MutableList
 from sqlalchemy import PickleType
 
 from .base_class import Base
+from .user_information import UserInformation
 
 class Order(Base):
     __table_args__={'schema' :'canymanagement'}
@@ -13,4 +14,4 @@ class Order(Base):
     order_no = Column('OrderNo', String(30), nullable=False)
     products_id = Column('ProductId', MutableList.as_mutable(PickleType), default=[], nullable=False)
     total_amount = Column('TotalAmount', Integer, nullable=False)
-    # user_info_id = Column('UserInfoId', Integer, ForeignKey("UserInformation.UserInfoId", ondelete="CASCADE"), nullable=False)
+    user_info_id = Column('UserInfoId', Integer, ForeignKey(UserInformation.user_info_id, ondelete="CASCADE"), nullable=False)

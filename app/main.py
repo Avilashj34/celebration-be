@@ -1,10 +1,9 @@
 from fastapi import FastAPI
-from api import products
+from api_v0 import api
 
 app = FastAPI() # openapi_url='/api'
 
-# app.include_router(prefix='/api')
-app.include_router(products.router)
+app.include_router(api.router, prefix='/api')
 
 
 
