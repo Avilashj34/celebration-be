@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from api_v0 import api
+from backend.api_v0 import api
 
 app = FastAPI() # openapi_url='/api'
 
