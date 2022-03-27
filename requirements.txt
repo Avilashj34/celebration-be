@@ -4,5 +4,5 @@ sqlalchemy==1.4.32
 requests
 psycopg2-binary==2.9.3
 alembic==1.7.7
-gnuicorn==2.9.3
+gnuicorn
 fastapi-camelcase==1.0.5
